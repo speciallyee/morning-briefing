@@ -98,6 +98,29 @@
   .sector-pol .sector-search{border-color:var(--sector-pol);}
   .sector-pol .sector-search button{background:var(--sector-pol);}
   @media (max-width:640px){.datetitle{font-size:20pt;} .sector-head h1{font-size:16pt;} .subsection{padding:16px 16px;} .sector-search{padding:5px 5px 5px 12px;} .sector-search button{padding:7px 12px;}}
+  .mapwrap{margin:14px 0 20px;background:#FCFCFA;border:1px solid #E4E2DB;border-radius:8px;padding:14px;}
+  .mapwrap svg{width:100%;height:auto;display:block;overflow:visible;}
+  .mapwrap .maplegend{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-top:10px;font-size:8.3pt;color:#8B93A0;}
+  .mapwrap .maplegend .sw{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:-1px;}
+  .zone-group,.gg-item{cursor:default;}
+  .zone-group a,.gg-item a{cursor:pointer;}
+  .zone-group path,.gg-item path{stroke:#fff;stroke-width:1.1;transition:opacity .12s;}
+  .zone-group:hover path,.gg-item:hover path{opacity:.72;}
+  .zone-group .tip,.gg-item .tip{opacity:0;pointer-events:none;transition:opacity .1s;}
+  .zone-group:hover .tip,.gg-item:hover .tip{opacity:1;pointer-events:auto;}
+  .tipbox{background:#24304A;color:#F5F3EC;border-radius:8px;padding:9px 11px;font-size:8.1pt;line-height:1.5;box-shadow:0 4px 14px rgba(0,0,0,.28);}
+  .tipbox b{color:#fff;font-size:8.6pt;}
+  .tipbox .tipsub{color:#C7CDD8;font-size:7.6pt;margin-top:2px;}
+  .tipbox .tiprow{border-top:1px solid rgba(255,255,255,.16);padding-top:4px;margin-top:4px;}
+  .tipbox a.more{color:#FFD873;text-decoration:none;font-weight:700;}
+  .zone-dosim path{fill:#DCDCD4;}
+  .zone-seonam path{fill:#FFD873;}
+  .zone-dongnam path{fill:#FF9E9E;}
+  .zone-seobuk path{fill:#90CAF9;}
+  .zone-dongbuk path{fill:#A8D08D;}
+  .gg-tiera path{fill:#6FCF97;}
+  .gg-tierb path{fill:#FFD873;fill-opacity:.6;}
+  .gg-tierc path{fill:#EDEBE4;}
 </style>
 </head>
 <body>
@@ -431,28 +454,6 @@
     <h2>4. 서울 4대 생활권역별 TOP10</h2>
     <p class="lead">서울을 동북·서북·서남·동남 4개 생활권역으로 나눠, 하우스랭킹의 구별 필터 조회로 각 권역 내 실거래가 상위 거래를 다시 추렸습니다. 위 TOP25 전체 집계와 달리 권역별로 나눠 보면, 강남3구·용산이 없는 서남·서북·동북권에서도 각 지역 내 '진짜 대장주'가 어디인지 드러납니다. 지도에 커서를 올리면 권역별 TOP3 미리보기가, 클릭하면 아래 해당 권역 표로 이동합니다.</p>
 <div class='mapwrap'>
-<style>
-.mapwrap{margin:14px 0 20px;background:#FCFCFA;border:1px solid #E4E2DB;border-radius:8px;padding:14px;}
-.mapwrap svg{width:100%;height:auto;display:block;overflow:visible;}
-.mapwrap .maplegend{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-top:10px;font-size:8.3pt;color:#8B93A0;font-family:-apple-system,BlinkMacSystemFont,'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',sans-serif;}
-.mapwrap .maplegend .sw{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:-1px;}
-.zone-group,.gg-item{cursor:default;}
-.zone-group a,.gg-item a{cursor:pointer;}
-.zone-group path,.gg-item path{stroke:#fff;stroke-width:1.1;transition:opacity .12s;}
-.zone-group:hover path,.gg-item:hover path{opacity:.72;}
-.zone-group .tip,.gg-item .tip{opacity:0;pointer-events:none;transition:opacity .1s;}
-.zone-group:hover .tip,.gg-item:hover .tip{opacity:1;pointer-events:auto;}
-.tipbox{background:#24304A;color:#F5F3EC;border-radius:8px;padding:9px 11px;font-size:8.1pt;line-height:1.5;box-shadow:0 4px 14px rgba(0,0,0,.28);font-family:-apple-system,BlinkMacSystemFont,'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',sans-serif;}
-.tipbox b{color:#fff;font-size:8.6pt;}
-.tipbox .tipsub{color:#C7CDD8;font-size:7.6pt;margin-top:2px;}
-.tipbox .tiprow{border-top:1px solid rgba(255,255,255,.16);padding-top:4px;margin-top:4px;}
-.tipbox a.more{color:#FFD873;text-decoration:none;font-weight:700;}
-.zone-dosim path{fill:#DCDCD4;}
-.zone-seonam path{fill:#FFD873;}
-.zone-dongnam path{fill:#FF9E9E;}
-.zone-seobuk path{fill:#90CAF9;}
-.zone-dongbuk path{fill:#A8D08D;}
-</style>
 <svg viewBox='0 0 640 530.2' xmlns='http://www.w3.org/2000/svg'>
 <g class='zone-group zone-dosim'><path d='M372.2,306.1 L391.2,323.4 L377.2,337.5 L328.2,368.2 L282.2,352.8 L271.7,334.5 L300.8,291.4 L336.4,287 L372.2,306.1 Z'><title>용산구</title></path><path d='M395,252 L372.2,306.1 L336.4,287 L300.8,291.4 L299.4,277.1 L307.3,263.3 L395,252 Z'><title>중구</title></path><path d='M315.3,134 L320.4,135.7 L338.3,168.3 L345.6,213.7 L394.7,239.7 L395,252 L307.3,263.3 L287.1,238.1 L282.2,181.5 L285,148.5 L315.3,134 Z'><title>종로구</title></path><foreignObject class='tip' x='231' y='209' width='210' height='40'><div xmlns='http://www.w3.org/1999/xhtml' class='tipbox'><b>도심권(용산·종로·중구)</b><div class='tipsub'>이번 TOP25·권역별 집계에 이름 없음</div></div></foreignObject></g>
 <g class='zone-group zone-seonam'><a href='#zone-seonam'><path d='M330.4,437.3 L341.3,473.4 L301.9,506.7 L278.4,510.8 L248.8,488.9 L227.1,474.2 L203.6,430.1 L209.4,421.1 L277.2,403.4 L313.3,439.8 L330.4,437.3 Z'><title>관악구</title></path><path d='M328.2,368.2 L330.4,437.3 L313.3,439.8 L277.2,403.4 L209.4,421.1 L234.8,396.3 L244.6,360.4 L282.2,352.8 L328.2,368.2 Z'><title>동작구</title></path><path d='M188.5,294 L271.7,334.5 L282.2,352.8 L244.6,360.4 L234.8,396.3 L209.4,421.1 L194.9,377.2 L172.7,359.1 L183,306.8 L188.5,294 Z'><title>영등포구</title></path><path d='M203.6,430.1 L227.1,474.2 L248.8,488.9 L205.1,513.9 L165.4,420.3 L203.6,430.1 Z'><title>금천구</title></path><path d='M88.2,375.6 L172.7,359.1 L194.9,377.2 L209.4,421.1 L203.6,430.1 L165.4,420.3 L120.2,441.9 L101.5,436.8 L81.7,410 L85.4,380.4 L88.2,375.6 Z'><title>구로구</title></path><path d='M40.1,232.8 L57.5,189.1 L81.4,214.8 L139.1,246.3 L188.5,294 L183,306.8 L149.2,291.6 L148.8,333.7 L112.4,340.1 L84.1,312.5 L5.3,296.9 L0,286.2 L40.1,232.8 Z'><title>강서구</title></path><path d='M84.1,312.5 L112.4,340.1 L148.8,333.7 L149.2,291.6 L183,306.8 L172.7,359.1 L88.2,375.6 L84.1,312.5 Z'><title>양천구</title></path></a><foreignObject class='tip' x='87' y='237' width='210' height='130'><div xmlns='http://www.w3.org/1999/xhtml' class='tipbox'><b>서남권 TOP10</b><div class='tipsub'>양천·강서·구로·금천·영등포·동작·관악 (7개구, 양천구 실거래 0건)</div><div class='tiprow'>1위 목화(영등포 여의도) 29억5,000</div><div class='tiprow'>2위 명수대현대(동작 흑석) 26억5,000</div><div class='tiprow'>3위 상도파크자이(동작 상도) 22억4,000</div><div class='tiprow'><a class='more' href='#zone-seonam'>TOP10 전체 보기 →</a></div></div></foreignObject></g>
@@ -537,26 +538,6 @@
     <h2>5. 경기 TOP100 시·구별 매매 쏠림 순위</h2>
     <p class="lead">경기도 실거래가 상위 100건을 시·구 단위로 태깅해 빈도를 집계했습니다. 결과는 예상보다 훨씬 쏠려 있었습니다 — TOP100 100건 전부가 단 7개 지역에서만 나왔고, 그중 성남 분당구 한 곳이 62건(62%)을 차지했습니다. 지도에서 진하게 표시된 곳일수록 TOP100 내 건수가 많은 지역입니다.</p>
 <div class='mapwrap'>
-<style>
-.mapwrap{margin:14px 0 20px;background:#FCFCFA;border:1px solid #E4E2DB;border-radius:8px;padding:14px;}
-.mapwrap svg{width:100%;height:auto;display:block;overflow:visible;}
-.mapwrap .maplegend{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-top:10px;font-size:8.3pt;color:#8B93A0;font-family:-apple-system,BlinkMacSystemFont,'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',sans-serif;}
-.mapwrap .maplegend .sw{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:-1px;}
-.zone-group,.gg-item{cursor:default;}
-.zone-group a,.gg-item a{cursor:pointer;}
-.zone-group path,.gg-item path{stroke:#fff;stroke-width:1.1;transition:opacity .12s;}
-.zone-group:hover path,.gg-item:hover path{opacity:.72;}
-.zone-group .tip,.gg-item .tip{opacity:0;pointer-events:none;transition:opacity .1s;}
-.zone-group:hover .tip,.gg-item:hover .tip{opacity:1;pointer-events:auto;}
-.tipbox{background:#24304A;color:#F5F3EC;border-radius:8px;padding:9px 11px;font-size:8.1pt;line-height:1.5;box-shadow:0 4px 14px rgba(0,0,0,.28);font-family:-apple-system,BlinkMacSystemFont,'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',sans-serif;}
-.tipbox b{color:#fff;font-size:8.6pt;}
-.tipbox .tipsub{color:#C7CDD8;font-size:7.6pt;margin-top:2px;}
-.tipbox .tiprow{border-top:1px solid rgba(255,255,255,.16);padding-top:4px;margin-top:4px;}
-.tipbox a.more{color:#FFD873;text-decoration:none;font-weight:700;}
-.gg-tiera path{fill:#6FCF97;}
-.gg-tierb path{fill:#FFD873;fill-opacity:.6;}
-.gg-tierc path{fill:#EDEBE4;}
-</style>
 <svg viewBox='0 0 640 846' xmlns='http://www.w3.org/2000/svg'>
 <g class='gg-item gg-tierc'><path  d='M500.7,401.5 L510.6,398.7 L521.5,387.7 L533.6,392.9 L546,405.2 L566.7,418.5 L572.2,427 L594.2,423.4 L600.1,429 L612.8,427.6 L622.5,440.1 L640,447.1 L636.6,455.6 L619.4,458.1 L603.8,475.6 L604.1,484.3 L614.5,501.4 L617.2,518.4 L605.4,557.1 L596.9,559.7 L569,555.6 L572.4,533.6 L552.8,532.7 L543,536.8 L537.4,531.6 L521.9,527.8 L490.2,532.9 L483.4,518.7 L476.3,515.7 L462.7,525.4 L435.5,515.8 L424.8,526.8 L419.5,522.5 L411.5,504.7 L418.9,493.2 L415.3,476.7 L407.3,461.1 L389,458.6 L380,469.3 L380.4,456.2 L396.5,423.7 L401.6,401.9 L410.7,389.6 L424.2,388 L436.5,379 L446,389.8 L459.8,413.9 L460.3,432.5 L471.7,435.8 L482.1,427.4 L502,426.6 L506.4,410.5 L500.7,401.5 Z'/><foreignObject class='tip' x='408' y='413' width='200' height='40'><div xmlns='http://www.w3.org/1999/xhtml' class='tipbox'><b>양평군</b><div class='tipsub'>이번 TOP100에 이름 없음</div></div></foreignObject></g>
 <g class='gg-item gg-tierc'><path  d='M446.4,145.9 L452.3,166.9 L459.1,173 L473.1,177 L491.5,176 L493.7,196 L521.8,203.9 L527,213.4 L528.9,233.3 L520.9,252.6 L512.9,251.9 L502.4,264.2 L488.1,272.4 L484.8,283.6 L489.6,292.2 L482.8,303 L493.8,321.7 L476.1,339.7 L492,346.7 L501.2,341 L496.5,367 L497.8,381.5 L490.2,392.7 L500.7,401.5 L506.4,410.5 L502,426.6 L482.1,427.4 L471.7,435.8 L460.3,432.5 L459.8,413.9 L446,389.8 L436.5,379 L424.2,388 L410.7,389.6 L414.5,373.6 L402.2,355.9 L403.2,343.9 L397.1,340.4 L385.5,317.5 L360.5,309.5 L366.6,287.9 L364.2,281.6 L370.9,255.4 L382.4,257.7 L387.9,253.2 L390.5,223.9 L403.3,224.1 L417,210.9 L413.1,200 L419.6,187.2 L430.8,178 L433.3,167.8 L446.4,145.9 Z'/><foreignObject class='tip' x='353' y='243' width='200' height='40'><div xmlns='http://www.w3.org/1999/xhtml' class='tipbox'><b>가평군</b><div class='tipsub'>이번 TOP100에 이름 없음</div></div></foreignObject></g>
